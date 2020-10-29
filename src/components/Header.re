@@ -8,9 +8,27 @@ module Bubble = {
       background(Colors.blue(`primary)),
       width(px(245)),
       height(px(256)),
-      borderRadius(pct(50.0)),
-      right(pct(-28.0)),
-      top(pct(-156.0)),
+      borderRadius(pct(50.)),
+      right(pct(-28.)),
+      top(pct(-156.)),
+
+      media("(min-width: 375px)", [
+        width(vw(75.)),
+        right(pct(-30.)),
+      ]),
+      
+      media("(min-width: 460px)", [
+        width(vw(65.)),
+      ]),
+      
+      media("(min-width: 700px)", [
+        width(vw(55.)),
+      ]),
+
+      media("(min-width: 1050px)", [
+        width(pct(46.)),
+        top(pct(-150.)),
+      ]),
     ]);
 
   [@react.component]
@@ -38,7 +56,7 @@ let make = () => {
   let header =
     style([
       height(px(100)),
-      width(vw(100.0)),
+      width(vw(100.)),
       display(flexBox),
       justifyContent(spaceBetween),
       alignItems(center),
