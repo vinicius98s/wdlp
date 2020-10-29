@@ -11,24 +11,10 @@ module Bubble = {
       borderRadius(pct(50.)),
       right(pct(-28.)),
       top(pct(-156.)),
-
-      media("(min-width: 375px)", [
-        width(vw(75.)),
-        right(pct(-30.)),
-      ]),
-      
-      media("(min-width: 460px)", [
-        width(vw(65.)),
-      ]),
-      
-      media("(min-width: 700px)", [
-        width(vw(55.)),
-      ]),
-
-      media("(min-width: 1050px)", [
-        width(pct(46.)),
-        top(pct(-150.)),
-      ]),
+      media("(min-width: 375px)", [width(vw(75.)), right(pct(-30.))]),
+      media("(min-width: 460px)", [width(vw(65.))]),
+      media("(min-width: 700px)", [width(vw(55.))]),
+      media("(min-width: 1050px)", [width(pct(46.)), top(pct(-150.))]),
     ]);
 
   [@react.component]

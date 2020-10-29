@@ -8,7 +8,7 @@ module.exports = {
   entry: "./src/Index.bs.js",
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   optimization: {
-    usedExports: true
+    usedExports: true,
   },
   module: {
     rules: [

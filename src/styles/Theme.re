@@ -9,4 +9,6 @@ module Colors = {
   };
 
   let white = hex("FFFFFF");
+
+  let grey = hex("616161");
 };
