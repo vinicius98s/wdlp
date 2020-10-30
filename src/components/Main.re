@@ -43,11 +43,18 @@ let make = () => {
     style([
       maxWidth(vw(50.)),
       marginRight(px(30)),
-      defaultMedia([maxWidth(vw(100.)), marginRight(zero)], ~min=false, ()),
+      defaultMedia(
+        [maxWidth(vw(100.)), marginRight(zero)],
+        ~min=false,
+        (),
+      ),
     ]);
 
   let phoneMock =
-    style([defaultMedia([marginTop(px(50))], ~min=false, ())]);
+    style([
+      zIndex(1),
+      defaultMedia([marginTop(px(50))], ~min=false, ()),
+    ]);
 
   <div className=container>
     <div className=textWrapper>
