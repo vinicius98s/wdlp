@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const outputDir = path.resolve(__dirname, "./dist");
 
@@ -34,6 +35,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [["optipng", { optimizationLevel: 5 }]],
+      },
+    }),
     new CopyPlugin({
       patterns: [
         {

@@ -72,6 +72,12 @@ let make = () => {
         {"Entrar para wedeal"->String.uppercase_ascii->s}
       </Button>
     </div>
-    <img className=phoneMock src="/assets/phone-mock.png" />
+    <img
+      width="214"
+      height="431"
+      className=phoneMock
+      src="/assets/phone-mock.png"
+      alt=""
+    />
   </div>;
 };

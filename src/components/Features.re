@@ -25,7 +25,7 @@ module Feat = {
       };
 
     <div className={Css.merge([wrapper, additionalStyles])}>
-      <img src=iconSrc alt="" width="50" />
+      <img src=iconSrc alt="" width="50" height="50" />
       <p className=description> text->React.string </p>
     </div>;
   };

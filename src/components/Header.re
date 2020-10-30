@@ -53,12 +53,32 @@ let make = () => {
     ]);
 
   <header className=header>
-    <img className=logo src="/assets/logo.png" alt="WeDeal" />
+    <img
+      width="160"
+      height="68"
+      className=logo
+      src="/assets/logo.png"
+      alt="WeDeal"
+    />
     <Bubble />
     <div className=iconsWrapper>
-      <img className=icon src="/assets/icons/facebook.png" alt="Facebook" />
-      <img className=icon src="/assets/icons/instagram.png" alt="Instagram" />
       <img
+        width="30"
+        height="30"
+        className=icon
+        src="/assets/icons/facebook.png"
+        alt="Facebook"
+      />
+      <img
+        width="30"
+        height="30"
+        className=icon
+        src="/assets/icons/instagram.png"
+        alt="Instagram"
+      />
+      <img
+        width="30"
+        height="30"
         className=lastIcon
         src="/assets/icons/linkedin.png"
         alt="Linkedin"
