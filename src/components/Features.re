@@ -60,28 +60,40 @@ let make = () => {
       media("(min-width: 345px)", [margin2(~v=px(10), ~h=px(20))]),
     ]);
 
-  <div className=container>
-    <div className=wrapper>
-      <Feat
-        styles={Css.merge([
-          style([marginRight(px(30)), marginBottom(px(40))]),
-          iconMq,
-        ])}
-        icon="book"
-        text={j|Expanda sua experiência e portfólio|j}
-      />
-      <Feat
-        styles={Css.merge([style([marginBottom(px(40))]), iconMq])}
-        icon="person"
-        text={j|Conquiste novos clientes|j}
-      />
-      <Feat styles=iconMq icon="idea" text={j|Tire suas ideias do papel|j} />
-      <Feat styles=iconMq icon="boss" text={j|Seja o seu próprio chefe|j} />
-      <Feat
-        styles=iconMq
-        icon="money"
-        text={j|Invista em projetos inovadores|j}
-      />
+  let screensImg =
+    style([
+      zIndex(1),
+      width(pct(100.)),
+      marginTop(px(80)),
+      position(absolute),
+      left(zero),
+    ]);
+
+  <>
+    <div className=container>
+      <div className=wrapper>
+        <Feat
+          styles={Css.merge([
+            style([marginRight(px(30)), marginBottom(px(40))]),
+            iconMq,
+          ])}
+          icon="book"
+          text={j|Expanda sua experiência e portfólio|j}
+        />
+        <Feat
+          styles={Css.merge([style([marginBottom(px(40))]), iconMq])}
+          icon="person"
+          text={j|Conquiste novos clientes|j}
+        />
+        <Feat styles=iconMq icon="idea" text={j|Tire suas ideias do papel|j} />
+        <Feat styles=iconMq icon="boss" text={j|Seja o seu próprio chefe|j} />
+        <Feat
+          styles=iconMq
+          icon="money"
+          text={j|Invista em projetos inovadores|j}
+        />
+      </div>
     </div>
-  </div>;
+    <img className=screensImg src="/assets/wedeal-screens.png" alt="" />
+  </>;
 };

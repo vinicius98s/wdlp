@@ -37,7 +37,7 @@ module.exports = {
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
     new ImageMinimizerPlugin({
       minimizerOptions: {
-        plugins: [["optipng", { optimizationLevel: 5 }]],
+        plugins: [["optipng", { optimizationLevel: 9 }]],
       },
     }),
     new CopyPlugin({
