@@ -37,13 +37,22 @@ let make = () => {
     style([
       display(flexBox),
       background(Colors.blue(`darker)),
-      width(vw(100.)),
+      width(`calc((`add, pct(100.), px(40)))),
       height(px(800)),
       margin2(~h=px(-20), ~v=px(-250)),
       transform(skewY(deg(-10.))),
       alignItems(center),
       justifyContent(center),
       paddingTop(px(100)),
+      media(
+        "(min-width: 1050px)",
+        [
+          height(px(600)),
+          margin2(~v=zero, ~h=px(-20)),
+          padding(zero),
+          paddingBottom(px(80)),
+        ],
+      ),
     ]);
 
   let wrapper =
@@ -60,13 +69,22 @@ let make = () => {
       media("(min-width: 345px)", [margin2(~v=px(10), ~h=px(20))]),
     ]);
 
-  let screensImg =
+  let screensWrapper =
     style([
-      zIndex(1),
       width(pct(100.)),
       marginTop(px(80)),
-      position(absolute),
-      left(zero),
+      display(flexBox),
+      alignItems(center),
+      justifyContent(center),
+      selector("& img", [width(pct(100.)), zIndex(1)]),
+      media(
+        "(min-width: 1050px)",
+        [
+          position(relative),
+          marginTop(px(-400)),
+          selector("& img", [width(pct(70.))]),
+        ],
+      ),
     ]);
 
   <>
@@ -94,6 +112,8 @@ let make = () => {
         />
       </div>
     </div>
-    <img className=screensImg src="/assets/wedeal-screens.png" alt="" />
+    <div className=screensWrapper>
+      <img src="/assets/wedeal-screens.png" alt="" />
+    </div>
   </>;
 };

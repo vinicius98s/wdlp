@@ -37,12 +37,12 @@ let make = () => {
 
   let icon = getIconStyle();
   let lastIcon = getIconStyle(~lastIcon=true, ());
-  let logo = style([marginLeft(rem(0.5))]);
+  let logo = style([marginLeft(rem(1.))]);
   let iconsWrapper = style([display(flexBox), zIndex(1)]);
   let header =
     style([
       height(px(100)),
-      width(vw(100.)),
+      width(pct(100.)),
       display(flexBox),
       justifyContent(spaceBetween),
       alignItems(center),

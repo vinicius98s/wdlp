@@ -19,5 +19,6 @@ let make = () => {
   <>
     <Header />
     <Container> <Main /> <Features /> <Video /> <CTA /> </Container>
+    <Footer />
   </>;
 };

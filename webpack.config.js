@@ -35,11 +35,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
-    new ImageMinimizerPlugin({
-      minimizerOptions: {
-        plugins: [["optipng", { optimizationLevel: 9 }]],
-      },
-    }),
+    // new ImageMinimizerPlugin({
+    //   minimizerOptions: {
+    //     plugins: [["optipng", { optimizationLevel: 9 }]],
+    //   },
+    // }),
     new CopyPlugin({
       patterns: [
         {

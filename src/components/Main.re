@@ -41,7 +41,7 @@ let make = () => {
 
   let textWrapper =
     style([
-      maxWidth(vw(50.)),
+      maxWidth(px(705)),
       marginRight(px(30)),
       defaultMedia(
         [maxWidth(vw(100.)), marginRight(zero)],
