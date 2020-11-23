@@ -42,7 +42,10 @@ module ShowCase = {
         color(Colors.blue(`darker)),
         fontSize(px(17)),
         fontWeight(`num(700)),
-        media("(min-width: 1050px)", [fontSize(px(28))]),
+        media("(min-width: 1050px)", [
+          fontSize(px(48)),
+          lineHeight(pxFloat(56.25))
+        ]),
       ]);
 
     let descriptionStyles =
@@ -51,7 +54,10 @@ module ShowCase = {
         marginTop(px(20)),
         fontWeight(`num(300)),
         fontSize(px(13)),
-        media("(min-width: 1050px)", [fontSize(px(20))]),
+        media("(min-width: 1050px)", [
+          fontSize(px(40)),
+          lineHeight(pxFloat(46.88))
+        ]),
       ]);
 
     <div className={Css.merge([wrapper, additionalStyles])}>
@@ -73,7 +79,7 @@ module Pictures = {
     let base =
       style([
         position(absolute),
-        width(px(200)),
+        width(px(300)),
         media("(max-width: 900px)", [width(px(150))]),
       ]);
 
@@ -88,7 +94,7 @@ module Pictures = {
           style([
             left(vw(26.)),
             bottom(px(80)),
-            width(px(250)),
+            width(px(350)),
             media("(max-width: 900px)", [bottom(px(180))]),
           ]),
         ])}
@@ -109,7 +115,7 @@ module Pictures = {
           base,
           style([
             bottom(zero),
-            right(vw(10.)),
+            right(vw(0.)),
             media("(max-width: 900px)", [right(vw(2.))]),
           ]),
         ])}
@@ -133,14 +139,19 @@ let make = () => {
       display(flexBox),
       alignItems(center),
       justifyContent(center),
-      media("(min-width: 1050px)", [height(px(200))]),
+      media("(min-width: 1050px)", [height(px(500))]),
     ]);
 
   let text =
     style([
       color(Colors.white),
-      fontSize(px(17)),
+      fontSize(px(45)),
+      lineHeight(pxFloat(52.73)),
       fontWeight(`num(700)),
+      media("(max-width: 1050px)", [
+        fontSize(px(17)),
+        lineHeight(pxFloat(19.92))
+      ]),
     ]);
 
   let desktopImg = style([width(pct(100.))]);
@@ -155,7 +166,10 @@ let make = () => {
     <ShowCase
       title={{j|Mostre o seu potencial!|j}->uppercaseText}
       description="Fidelize aquele cliente dos sonhos mostrando o seu melhor nos projetos que participa."
-      styles={style([marginTop(px(40))])}>
+      styles={style([
+        marginTop(px(-100)),
+        media("(max-width: 1050px)", [marginTop(px(0))]),
+      ])}>
       <img
         className={style([width(pct(50.)), marginRight(px(-20))])}
         src="/assets/app-screens.png"
@@ -166,7 +180,7 @@ let make = () => {
       title={{j|Faça acontecer!|j}->uppercaseText}
       invert=true
       description={j|Divulgue suas ideias de forma segura para investidores, monte equipe com profissionais qualificados cadastrados na plataforma e administre o desenvolvimento do projeto do começo ao fim.|j}
-      styles={style([marginTop(px(60))])}>
+      styles={style([media("(max-width: 1050px)", [marginTop(px(30))])])}>
       <img
         className={style([width(pct(35.))])}
         src="/assets/screen-app-mock.png"
@@ -177,12 +191,13 @@ let make = () => {
     <ShowCase
       title={{j|Criatividade à espera de uma oportunidade|j}->uppercaseText}
       description={j|Com a WeDeal você tem acesso a um vasto banco de ideias fora da caixa esperando algum tipo de investimento ou mão de obra qualificada para serem desenvolvidos e entregues ao mundo.|j}
-      styles={style([width(pct(100.)), maxWidth(px(500))])}
+      styles={style([width(pct(100.)), maxWidth(px(800))])}
     />
     <img className=desktopImg src="/assets/wedeal-desktop.png" />
     <ShowCase
       title={{j|A melhor parte!|j}->uppercaseText}
       description={j|Estipule quanto vale os seus serviços; e escolha os dias e a carga horária em que deseja trabalhar.|j}
+      styles={style([width(pct(100.)), maxWidth(px(1200)), marginBottom(px(70))])}
     />
   </>;
 };

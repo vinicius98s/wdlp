@@ -26,7 +26,7 @@ let make = () => {
       fontSize(px(19)),
       color(Colors.blue(`darker)),
       lineHeight(px(22)),
-      defaultMedia([fontSize(px(38)), lineHeight(px(49))], ()),
+      defaultMedia([fontSize(px(50)), lineHeight(pxFloat(58.59))], ()),
     ]);
 
   let description =
@@ -36,7 +36,7 @@ let make = () => {
       lineHeight(px(16)),
       color(Colors.grey),
       marginTop(px(10)),
-      defaultMedia([fontSize(px(20)), lineHeight(pxFloat(35.16))], ()),
+      defaultMedia([fontSize(px(30)), lineHeight(pxFloat(35.16))], ()),
     ]);
 
   let textWrapper =

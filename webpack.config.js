@@ -2,8 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const outputDir = path.resolve(__dirname, "./dist");
+
+const isProduction = process.env.NODE_ENV === "production";
+const isDevelopment = !isProduction;
 
 module.exports = {
   entry: "./src/Index.bs.js",
@@ -21,7 +25,32 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            cacheDirectory: true,
+            cacheCompression: false,
+            envName:
+              process.env.NODE_ENV === "production"
+                ? "production"
+                : "development",
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+          "css-loader",
+        ],
+      },
     ],
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
   },
   devServer: {
     compress: true,
@@ -48,5 +77,10 @@ module.exports = {
         },
       ],
     }),
-  ],
+    isProduction &&
+      new MiniCssExtractPlugin({
+        filename: "assets/css/[name].[contenthash:8].css",
+        chunkFilename: "assets/css/[name].[contenthash:8].chunk.css",
+      }),
+  ].filter(Boolean),
 };

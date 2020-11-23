@@ -5,7 +5,8 @@ open Theme;
 let make = () => {
   let wrapper =
     style([
-      width(vw(99.)),
+      width(vw(97.)),
+      marginLeft(vw(1.1)),
       background(Colors.blue(`primary)),
       overflowY(hidden),
       height(vw(50.)),

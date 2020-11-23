@@ -9,14 +9,19 @@ module Feat = {
       style([
         color(Colors.white),
         fontWeight(`num(700)),
-        fontSize(px(13)),
-        maxWidth(px(105)),
+        fontSize(px(23)),
+        maxWidth(px(245)),
         textAlign(center),
         marginTop(px(12)),
+        media("(max-width: 1050px)", [fontSize(px(13))]), 
       ]);
 
     let wrapper =
-      style([display(flexBox), alignItems(center), flexDirection(column)]);
+      style([
+        display(flexBox),
+        alignItems(center),
+        flexDirection(column),
+      ]);
 
     let additionalStyles =
       switch (styles) {
@@ -44,13 +49,13 @@ let make = () => {
       alignItems(center),
       justifyContent(center),
       paddingTop(px(100)),
+      media("(max-width: 370px)", [paddingTop(px(180))]),
       media(
         "(min-width: 1050px)",
         [
           height(px(600)),
           margin2(~v=zero, ~h=px(-20)),
-          padding(zero),
-          paddingBottom(px(80)),
+          paddingBottom(px(100)),
         ],
       ),
     ]);
@@ -72,16 +77,17 @@ let make = () => {
   let screensWrapper =
     style([
       width(pct(100.)),
-      marginTop(px(80)),
+      marginTop(px(90)),
       display(flexBox),
       alignItems(center),
       justifyContent(center),
       selector("& img", [width(pct(100.)), zIndex(1)]),
+      media("(max-width: 380px)", [marginTop(px(180))]),
       media(
         "(min-width: 1050px)",
         [
           position(relative),
-          marginTop(px(-400)),
+          marginTop(px(-200)),
           selector("& img", [width(pct(70.))]),
         ],
       ),

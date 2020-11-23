@@ -1,5 +1,10 @@
 open Css;
 
+module Video = {
+  [@bs.module "./components/Video.jsx"][@react.component]
+  external make: (~name: string) => React.element = "default";
+}
+
 module Container = {
   let styles =
     style([
@@ -18,7 +23,7 @@ module Container = {
 let make = () => {
   <>
     <Header />
-    <Container> <Main /> <Features /> <Video /> <CTA /> </Container>
+    <Container> <Main /> <Features /> <Video name="video" /> <CTA /> </Container>
     <Footer />
   </>;
 };
